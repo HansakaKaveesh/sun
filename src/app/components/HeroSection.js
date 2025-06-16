@@ -83,27 +83,35 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-black/20"></div>
 
-      <div className="relative z-10 flex items-center justify-start h-full px-6 md:px-16">
-        <div className="text-white text-left w-full max-w-md sm:max-w-lg md:max-w-none md:w-1/2">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">We Build Brands That Stand Out</h1>
-          <p className="text-lg md:text-3xl mb-4 font-medium">
-            Experts in{' '}
-            <span className="border-b-2 border-orange-400 animate-pulse">
-              {typedText}
-              <span className="inline-block w-1 bg-white ml-1 animate-blink" />
-            </span>
-          </p>
-          <p className="text-base md:text-lg mb-8">
-            Partner with a creative agency that combines data, design, and strategy to make brands unforgettable.
-          </p>
-          <a
-            href="#services"
-            className="bg-orange-500 hover:bg-orange-600 transition-colors py-3 px-6 rounded-md text-white font-semibold"
-          >
-            Let’s Talk
-          </a>
-        </div>
-      </div>
+<div className="relative z-10 flex items-center justify-start h-full px-6 md:px-16 py-12 md:py-20">
+  <div className="text-white text-left w-full max-w-xl md:max-w-2xl lg:max-w-3xl">
+    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight md:leading-[1.1] mb-6">
+      We Build Brands <br className="hidden sm:block" />
+      <span className="text-orange-400">That Stand Out</span>
+    </h1>
+
+    <p className="text-lg md:text-2xl mb-4 font-medium leading-snug text-white/90">
+      Experts in{' '}
+      <span className="relative inline-flex items-center border-b-2 border-orange-400">
+        <span className="pr-1 animate-typing whitespace-nowrap overflow-hidden">
+          {typedText}
+        </span>
+        <span className="inline-block w-1 h-5 bg-white ml-1 animate-blink" />
+      </span>
+    </p>
+
+    <p className="text-base md:text-lg mb-8 text-white/80 max-w-2xl">
+      Partner with a creative agency that blends strategy, data, and design to build unforgettable brand experiences.
+    </p>
+
+    <a
+      href="#services"
+      className="inline-block bg-orange-500 hover:bg-orange-600 transition-all duration-300 py-3 px-6 rounded-md shadow-lg text-white font-semibold text-lg"
+    >
+      Let’s Talk
+    </a>
+  </div>
+</div>
 
       {/* Client Logos Bar */}
       <div className="absolute bottom-0 w-full bg-black/30 py-4">

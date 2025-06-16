@@ -69,13 +69,13 @@ export default function Navbar() {
           >
             <motion.div 
               whileHover={{ rotate: 15 }}
-              className="relative w-10 h-10"
+              className="relative w-12 h-12"
             >
               
               <img 
                 src="/Sun.png" 
                 alt="Logo" 
-                className="relative w-10 h-10 object-contain drop-shadow-lg"
+                className="relative w-12 h-12 object-contain drop-shadow-lg"
               />
             </motion.div>
             <motion.span 
