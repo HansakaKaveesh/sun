@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 
 const backgroundImages = [
-  '/ad1.png', '/ad2.png'
+  '/newad1.png',
+  '/newad2.png'
 ];
 // Update with your actual image paths
 const services = [
