@@ -7,8 +7,19 @@ export default function CustomSection() {
   return (
     <section className="bg-[#0a0a23] text-white py-20 px-6 lg:px-24">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
-
-        {/* Left Content */}
+        {/* Left Side Image */}
+        <div className="flex-1 relative">
+          <div className="relative w-full h-[450px]">
+            <Image
+              src="/about.png"
+              alt="Project Showcase"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
+        
+        {/* Right Content */}
         <div className="flex-1">
           <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
             Creative Web Agency <br />
@@ -57,17 +68,7 @@ export default function CustomSection() {
           </div>
         </div>
 
-        {/* Right Side Image */}
-                <div className="flex-1 relative">
-          <div className="relative w-full h-[450px]">
-            <Image
-              src="/about.png"
-              alt="Project Showcase"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </div>
+
       </div>
     </section>
   );
