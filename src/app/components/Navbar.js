@@ -13,11 +13,12 @@ export default function Navbar() {
   
   // Services data
   const services = [
-    { title: "Web Design", description: "Stunning, responsive websites", href: "/services/web-design" },
-    { title: "Graphic Design", description: "Captivating visual content", href: "/services/graphic-design" },
-    { title: "Social Media", description: "Engagement-driven strategies", href: "/services/social-media" },
-    { title: "Digital Marketing", description: "Data-driven campaigns", href: "/services/digital-marketing" },
-    { title: "Brand Strategy", description: "Cohesive brand identity", href: "/services/brand-strategy" },
+    { title: "Digital Printing", href: "/services/digital-printing" },
+    { title: "Billboards", href: "/services/billboards" },
+    { title: "Cladding Signage", href: "/services/cladding-signage" },
+    { title: "Light Boxes Name Boards", href: "/services/light-boxes-name-boards" },
+    { title: "Graphic Designing", href: "/services/graphic-designing" },
+    { title: "Web Development", href: "/services/web-development" },
   ];
 
   useEffect(() => {
@@ -135,14 +136,12 @@ export default function Navbar() {
                               >
                                 <div className="flex-1">
                                   <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-yellow-400 mt-1.5"></div>
+                                    
                                     <span className="font-medium text-white group-hover:text-yellow-400 transition-colors">
                                       {service.title}
                                     </span>
                                   </div>
-                                  <p className="text-gray-400 text-xs mt-1 pl-4">
-                                    {service.description}
-                                  </p>
+                                 
                                 </div>
                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity text-yellow-400">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">

@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 export const metadata = {
@@ -13,8 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className="font-sans text-center text-gray-800 bg-gradient-to-br from-blue-300 to-pink-300">
-      
+      <Navbar />
         {children}
+      <Footer />
       </body>
     </html>
   );
