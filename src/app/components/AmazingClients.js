@@ -37,17 +37,17 @@ const works = [
   },
   {
     title: 'Vehicle Wrap Design',
-    image: '/vehicle-wrap.jpg',
+    image: '/AndersonVan0508.jpg',
     category: 'Outdoor Advertising',
   },
   {
     title: 'E-commerce Platform',
-    image: '/ecommerce.jpg',
+    image: '/Post frithcode FB.png',
     category: 'Web Development',
   },
   {
     title: 'Trade Show Booth',
-    image: '/trade-show.jpg',
+    image: '/corner-trade-show.jpg',
     category: 'Signage',
   },
 ];
