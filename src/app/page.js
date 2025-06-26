@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/about';
 import Facilities from './components/FacilitiesSection';
 import AmazingClients from './components/AmazingClients';
+import WorkflowSection  from './components/WorkflowSection';
 import Footer from './components/Footer';
 
 
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <Facilities />
+      <WorkflowSection />
       <AmazingClients />
       <Footer />
     </main>

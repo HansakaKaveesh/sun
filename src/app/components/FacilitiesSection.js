@@ -1,138 +1,82 @@
 'use client';
 
-import { motion } from 'framer-motion'; // For animations
 import {
-  FaPrint,
-  FaBullhorn,
-  FaBuilding,
-  FaLightbulb,
-  FaPencilRuler,
-  FaCode,
-} from 'react-icons/fa';
+  Printer,
+  Image as ImageIcon,
+  Building2,
+  Lightbulb,
+  Palette,
+  Code2,
+} from 'lucide-react';
 
 const services = [
   {
     title: 'Digital Printing',
-    icon: <FaPrint size={28} />,
-    image: '/images/digital-priniting.jpg',
-    description: 'High-quality digital printing services for all your needs.',
+    description: 'High-quality digital printing for all your business needs.',
+    icon: Printer,
   },
   {
     title: 'Billboards',
-    icon: <FaBullhorn size={28} />,
-    image: '/images/billboards.jpg',
-    description: 'Eye-catching billboard designs to boost your brand visibility.',
+    description: 'Design and production of large format billboards.',
+    icon: ImageIcon,
   },
   {
     title: 'Cladding Signage',
-    icon: <FaBuilding size={28} />,
-    image: '/images/12.jpg',
-    description: 'Durable and stylish cladding signage for your business.',
+    description: 'Durable and modern cladding signage solutions.',
+    icon: Building2,
   },
   {
     title: 'Light Boxes Name Boards',
-    icon: <FaLightbulb size={28} />,
-    image: '/images/light box.jpg',
-    description: 'Illuminated name boards to make your brand shine.',
+    description: 'Illuminated boards to make your brand shine.',
+    icon: Lightbulb,
   },
   {
     title: 'Graphic Designing',
-    icon: <FaPencilRuler size={28} />,
-    image: '/images/graphic-designer.jpg',
-    description: 'Creative graphic design solutions for all industries.',
+    description: 'Creative design services to match your brand’s identity.',
+    icon: Palette,
   },
   {
     title: 'Web Development',
-    icon: <FaCode size={28} />,
-    image: '/images/Post frithcode FB.png',
-    description: 'Modern and responsive web development services.',
+    description: 'Modern and responsive websites for your business.',
+    icon: Code2,
   },
 ];
 
-// Animation variants for Framer Motion
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-  hover: { scale: 1.05, transition: { duration: 0.3 } },
-};
-
-export default function ServicesSection() {
+export default function OurServices() {
   return (
-    <section className="py-20 bg-[#0a0a23] text-center overflow-hidden">
-      {/* Section Header with Animation */}
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    <section className="bg-[#0a0a23] py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
           Our Services
         </h2>
-        <div className="w-24 h-1 bg-blue-600 mx-auto mb-12 rounded-full" />
-      </motion.div>
+        <p className="text-gray-300 text-lg">
+          We specialize in a range of creative and technical services to grow your brand.
+        </p>
+      </div>
 
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 md:px-16">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="relative group rounded-2xl overflow-hidden shadow-lg bg-white cursor-pointer"
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            whileHover="hover"
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }} // Staggered animation for each card
-          >
-            {/* Image */}
-            <div className="relative w-full h-64 overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                loading="lazy" // Improve performance with lazy loading
-              />
-              {/* Overlay for better text readability */}
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
-            </div>
-
-            {/* Icon */}
-            <div className="absolute top-4 left-4 bg-white p-3 rounded-full shadow-md text-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white z-10">
-              {service.icon}
-            </div>
-
-            {/* Content */}
-            <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent text-white py-6 px-6 backdrop-blur-sm transition-all duration-300 group-hover:backdrop-blur-md">
-              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        {services.map((service, index) => {
+          const Icon = service.icon;
+          return (
+            <div
+              key={index}
+              className="group bg-gradient-to-br from-[#1a1a2e] to-[#1f1f3a] hover:from-[#26264e] hover:to-[#2e2e5a] 
+              rounded-2xl p-8 text-center shadow-lg transition-transform transform 
+              duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <div className="flex justify-center items-center mb-6">
+                <Icon className="w-12 h-12 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">
                 {service.title}
               </h3>
-              <p className="text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-gray-400 leading-relaxed">
                 {service.description}
               </p>
             </div>
-
-            {/* Accessibility: Screen Reader Text */}
-            <span className="sr-only">{service.description}</span>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
-
-      {/* Call to Action Button */}
-      <motion.div
-        className="mt-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-      >
-        <a
-          href="#contact"
-          className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-300"
-        >
-          Explore All Services
-        </a>
-      </motion.div>
     </section>
   );
 }

@@ -1,116 +1,171 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion'; // For animations
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
-const images = [
-  { src: '/Rajagiriya.png', alt: 'Client work in Rajagiriya' },
-  { src: '/Post Texttile FB.png', alt: 'Textile project showcase' },
-  { src: '/Nuwara Eliya - Kandy.png', alt: 'Nuwara Eliya to Kandy project' },
-  { src: '/Towards Kandy.png', alt: 'Towards Kandy project' },
-  { src: '/battaramulla.png', alt: 'Battaramulla client work' },
-  { src: '/Rajagiriya.png', alt: 'Another Rajagiriya project' },
-  { src: '/Post Texttile FB.png', alt: 'Textile project showcase repeat' },
-  { src: '/Nuwara Eliya - Kandy.png', alt: 'Nuwara Eliya to Kandy repeat' },
-  { src: '/Towards Kandy.png', alt: 'Towards Kandy repeat' },
+const works = [
+  {
+    title: 'Billboard Campaign',
+    image: '/Nuwara Eliya - Kandy.png',
+    category: 'Outdoor Advertising',
+  },
+  {
+    title: 'Website Redesign',
+    image: '/Post Texttile FB.png',
+    category: 'Web Development',
+  },
+  {
+    title: 'Light Box Designs',
+    image: '/light box.jpg',
+    category: 'Signage',
+  },
+  {
+    title: 'Brand Identity',
+    image: '/graphic-designer.jpg',
+    category: 'Graphic Design',
+  },
+  {
+    title: 'Digital Printing',
+    image: '/digital-priniting.jpg',
+    category: 'Printing',
+  },
+  {
+    title: 'Social Campaign',
+    image: '/Ads-In-Times-Square-840x560.jpg',
+    category: 'Marketing',
+  },
+  {
+    title: 'Vehicle Wrap Design',
+    image: '/vehicle-wrap.jpg',
+    category: 'Outdoor Advertising',
+  },
+  {
+    title: 'E-commerce Platform',
+    image: '/ecommerce.jpg',
+    category: 'Web Development',
+  },
+  {
+    title: 'Trade Show Booth',
+    image: '/trade-show.jpg',
+    category: 'Signage',
+  },
 ];
 
-// Animation variants for Framer Motion
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-  },
-};
+export default function OurWorkSection() {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const categories = ['All', ...new Set(works.map(work => work.category))];
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-  hover: { scale: 1.05, transition: { duration: 0.3 } },
-};
+  const filteredWorks = activeFilter === 'All' 
+    ? works 
+    : works.filter(work => work.category === activeFilter);
 
-export default function AmazingClients() {
   return (
-    <section className="bg-[#0a0a23] py-20 px-4 overflow-hidden">
-      {/* Section Header with Animation */}
-      <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          A selection of work for our <br />
-          <span className="relative inline-block">
-            <span className="text-white underline decoration-pink-500 decoration-4 underline-offset-8">
-              amazing clients
-            </span>
-            {/* Animated underline effect */}
-            <span className="absolute left-0 bottom-0 w-0 h-1 bg-pink-500 transition-all duration-500 group-hover:w-full" />
-          </span>
-        </h2>
-        <div className="mt-6 animate-bounce">
-          <span className="text-white text-3xl md:text-4xl">⌄</span>
-        </div>
-      </motion.div>
-
-      {/* Image Grid with Animation */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-2"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {images.map((image, idx) => (
-          <motion.div
-            key={idx}
-            className="relative w-full h-64 rounded-xl overflow-hidden shadow-lg group"
-            variants={itemVariants}
-            whileHover="hover"
+    <section className="bg-[#0a0a23] text-white py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            {/* Image with Overlay */}
-            <div className="relative w-full h-full">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                layout="fill"
-                objectFit="cover"
-                className="transition-all duration-500 group-hover:scale-110"
-                loading="lazy" // Improve performance with lazy loading
-              />
-              {/* Overlay for better readability and hover effect */}
-              
-            </div>
+            Our Creative Portfolio
+          </motion.h2>
+          
+          <motion.p 
+            className="text-gray-400 max-w-2xl mx-auto mb-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Discover our diverse range of successful projects crafted with passion and expertise
+          </motion.p>
 
-            {/* Caption on Hover */}
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent text-white py-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-sm md:text-base font-medium">{image.alt}</p>
-            </div>
-
-            {/* Accessibility: Screen Reader Text */}
-            <span className="sr-only">{image.alt}</span>
+          <motion.div 
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveFilter(category)}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeFilter === category
+                    ? 'bg-indigo-600 text-white'
+                    : 'bg-[#1a1a2e] text-gray-300 hover:bg-[#26264e]'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
+        </div>
 
-      {/* Call to Action Button */}
-      <motion.div
-        className="mt-16 text-center"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-      >
-        <a
-          href="#portfolio"
-          className="inline-block px-8 py-4 bg-pink-500 text-white font-semibold rounded-full hover:bg-pink-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredWorks.map((work, index) => (
+            <motion.article
+              key={index}
+              className="group relative overflow-hidden rounded-2xl shadow-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  className="object-cover"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+                
+                {/* Content Overlay */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-indigo-600 text-white text-xs font-medium rounded-full mb-3">
+                      {work.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-white">{work.title}</h3>
+                  </div>
+                  <button className="w-full py-2 bg-white text-indigo-600 font-medium rounded-md hover:bg-indigo-50 transition">
+                    View Project
+                  </button>
+                </div>
+              </div>
+
+              {/* Always visible info on mobile */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent lg:hidden">
+                <span className="inline-block px-2 py-1 bg-indigo-600 text-white text-xs font-medium rounded mb-1">
+                  {work.category}
+                </span>
+                <h3 className="text-sm font-semibold text-white">{work.title}</h3>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          View Full Portfolio
-        </a>
-      </motion.div>
+          <button className="px-8 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition shadow-lg hover:shadow-indigo-500/30">
+            View All Projects
+          </button>
+        </motion.div>
+      </div>
     </section>
   );
 }
