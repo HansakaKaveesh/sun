@@ -114,21 +114,20 @@ export default function Hero() {
 </div>
 
       {/* Client Logos Bar */}
-      <div className="absolute bottom-0 w-full bg-black/30 py-4">
-        <div className="overflow-hidden relative">
-          <div className="animate-slide whitespace-nowrap flex items-center gap-12 px-4">
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <img
-                key={index}
-                src={logo}
-                alt={`Client ${index + 1}`}
-                className="h-12 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
-
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <div className="absolute bottom-0 w-full bg-black/0 py-4">
+  <div className="overflow-hidden relative">
+    <div className="animate-slide whitespace-nowrap flex items-center gap-12 px-4">
+      {[...clientLogos, ...clientLogos].map((logo, index) => (
+        <img
+          key={index}
+          src={logo}
+          alt={`Client ${index + 1}`}
+          className="h-12 w-auto object-contain grayscale  hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+        />
+      ))}
+    </div>
+  </div>
+</div>
     </section>
   );
 }
