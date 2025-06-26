@@ -18,18 +18,16 @@ const services = [
 
 // Sample client logos (update paths as needed)
 const clientLogos = [
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
-  '/logo1.jpg',
+  '/Asset-1-2.jpg',
+  '/singale logo.png',
+  '/Sun.png',
+  '/Asset-1-2.jpg',
+  '/singale logo.png',
+  '/Sun.png',
+  '/Asset-1-2.jpg',
+  '/singale logo.png',
+  '/Sun.png',
+  '/Asset-1-2.jpg',
 ];
 
 export default function Hero() {
