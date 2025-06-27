@@ -87,7 +87,7 @@ export default function WebDevelopmentPage() {
         <p className="text-lg text-gray-400 mb-6 max-w-3xl mx-auto">
           We craft high-quality, scalable, and user-centric web solutions using the latest technologies like 
           <strong className="text-white"> Next.js, React, and Node.js</strong>. 
-          Whether you're a startup or enterprise — we turn your idea into digital reality.
+          Whether you’re a startup or enterprise — we turn your idea into digital reality.
         </p>
 
         <a
@@ -179,7 +179,7 @@ export default function WebDevelopmentPage() {
       <section className="mt-24 text-center">
         <h2 className="text-3xl font-bold mb-4">Let’s Build Something Amazing</h2>
         <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-          Whether it's a startup or an enterprise-grade app, we deliver scalable,
+          Whether it’s a startup or an enterprise-grade app, we deliver scalable,
           efficient software — and partner in your growth journey.
         </p>
         <a
