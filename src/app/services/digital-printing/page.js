@@ -168,7 +168,7 @@ export default function DigitalPrintingPage() {
       <section className="mt-24 text-center">
         <h2 className="text-3xl font-bold mb-4">Let’s Print Your Vision</h2>
         <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-          From business essentials to creative campaigns — we bring your ideas into vivid, tangible reality. Let's make something incredible.
+          From business essentials to creative campaigns — we bring your ideas into vivid, tangible reality. Lets make something incredible.
         </p>
         <a
           href="/contact"
